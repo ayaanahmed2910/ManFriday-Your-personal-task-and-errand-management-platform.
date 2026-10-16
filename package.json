@@ -1,0 +1,11 @@
+{
+  "name": "man-friday-tools",
+  "private": true,
+  "description": "Test and demo tooling for Man Friday (no dependencies; needs Node 22+)",
+  "type": "module",
+  "scripts": {
+    "e2e": "node e2e/ui.e2e.mjs",
+    "seed": "node scripts/seed-demo.mjs",
+    "demo": "node scripts/record-demo.mjs"
+  }
+}

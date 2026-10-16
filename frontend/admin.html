@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Admin · Man Friday</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%2324584a'/%3E%3Ctext x='16' y='21' font-family='Arial' font-weight='700' font-size='13' fill='white' text-anchor='middle'%3EMF%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="top"></header>
+<main class="container">
+  <div class="page-head">
+    <div>
+      <h1>Admin console</h1>
+      <p>Oversee every errand and account on the platform.</p>
+    </div>
+    <span class="updated" data-updated></span>
+  </div>
+
+  <div class="stats" id="stats"></div>
+
+  <section class="section">
+    <div class="section-head">
+      <div class="tabs" role="tablist" aria-label="Admin sections" id="views">
+        <button class="tab" role="tab" type="button" aria-selected="true" data-tab="jobs">Errands <span class="count" data-count="jobs">0</span></button>
+        <button class="tab" role="tab" type="button" aria-selected="false" data-tab="users">Users <span class="count" data-count="users">0</span></button>
+      </div>
+    </div>
+
+    <div id="jobs-view">
+      <div class="toolbar">
+        <div class="search">
+          <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg></span>
+          <input id="job-search" type="search" placeholder="Search text, user or #id" aria-label="Search errands">
+        </div>
+        <select id="status-filter" aria-label="Filter by status"><option value="">All statuses</option></select>
+        <select id="category-filter" aria-label="Filter by category"><option value="">All categories</option></select>
+      </div>
+      <div id="jobs" class="list" aria-live="polite"></div>
+    </div>
+
+    <div id="users-view" hidden>
+      <div class="toolbar">
+        <div class="search">
+          <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg></span>
+          <input id="user-search" type="search" placeholder="Search username or skill" aria-label="Search users">
+        </div>
+        <select id="role-filter" aria-label="Filter by role">
+          <option value="">All roles</option>
+          <option value="CLIENT">Clients</option>
+          <option value="ASSISTANT">Assistants</option>
+          <option value="ADMIN">Admins</option>
+        </select>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>User</th><th>Role</th><th>Skills</th><th>Errands posted</th><th>Errands handled</th></tr></thead>
+          <tbody id="users"></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+</main>
+<script src="js/app.js"></script>
+<script src="js/admin.js"></script>
+</body>
+</html>

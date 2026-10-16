@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Man Friday</title>
+  <meta name="description" content="Post an errand and get it done by a trusted assistant.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%2324584a'/%3E%3Ctext x='16' y='21' font-family='Arial' font-weight='700' font-size='13' fill='white' text-anchor='middle'%3EMF%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="auth">
+  <section class="auth-hero">
+    <a class="brand" href="index.html"><span class="logo">MF</span>Man Friday</a>
+    <div>
+      <h1>Your errands, handled.</h1>
+      <p class="lead">Post a task, from a broken TV to a document that needs submitting, and a trusted assistant picks it up and sees it through.</p>
+    </div>
+    <ol class="how">
+      <li><span class="num">1</span><div><b>Post an errand</b><span>Choose a category and describe what needs doing.</span></div></li>
+      <li><span class="num">2</span><div><b>An assistant accepts</b><span>Assistants see open errands and claim the ones they can do.</span></div></li>
+      <li><span class="num">3</span><div><b>Track it to done</b><span>Follow progress live, from accepted to in progress to completed.</span></div></li>
+    </ol>
+  </section>
+
+  <main class="auth-panel">
+    <div class="auth-card card">
+      <h2 id="auth-title">Welcome back</h2>
+      <p class="hint" id="auth-sub">Log in to see your errands.</p>
+
+      <div class="tabs" role="tablist" aria-label="Log in or sign up">
+        <button class="tab" role="tab" type="button" aria-selected="true" data-tab="login">Log in</button>
+        <button class="tab" role="tab" type="button" aria-selected="false" data-tab="register">Sign up</button>
+      </div>
+
+      <form id="login" novalidate>
+        <label for="l-user">Username</label>
+        <input id="l-user" name="username" autocomplete="username" required>
+        <label for="l-pass">Password</label>
+        <div class="input-wrap">
+          <input id="l-pass" name="password" type="password" autocomplete="current-password" required>
+          <button class="btn ghost reveal" type="button" data-reveal="l-pass">Show</button>
+        </div>
+        <div class="form-error" role="alert" hidden></div>
+        <button class="btn primary block" style="margin-top:18px" type="submit">Log in</button>
+      </form>
+
+      <form id="register" novalidate hidden>
+        <span class="label">I want to</span>
+        <div class="role-grid" role="radiogroup" aria-label="Account type">
+          <label class="role-option" style="margin:0">
+            <input type="radio" name="role" value="CLIENT" checked>
+            <span class="tile"><b>Post errands</b><small>Get things done</small></span>
+          </label>
+          <label class="role-option" style="margin:0">
+            <input type="radio" name="role" value="ASSISTANT">
+            <span class="tile"><b>Run errands</b><small>Work as an assistant</small></span>
+          </label>
+        </div>
+        <label for="r-user">Username</label>
+        <input id="r-user" name="username" autocomplete="username" minlength="3" maxlength="80" pattern="[A-Za-z0-9._\-]+" required>
+        <p class="hint" style="margin:6px 0 0">3+ characters: letters, digits, dot, underscore or dash.</p>
+        <label for="r-pass">Password</label>
+        <div class="input-wrap">
+          <input id="r-pass" name="password" type="password" autocomplete="new-password" minlength="6" maxlength="72" required>
+          <button class="btn ghost reveal" type="button" data-reveal="r-pass">Show</button>
+        </div>
+        <p class="hint" style="margin:6px 0 0">At least 6 characters.</p>
+        <div id="skills-field" hidden>
+          <label for="r-skills">Skills <span class="hint">(optional, comma separated)</span></label>
+          <input id="r-skills" name="skills" placeholder="e.g. electronics, paperwork, driving">
+        </div>
+        <div class="form-error" role="alert" hidden></div>
+        <button class="btn primary block" style="margin-top:18px" type="submit">Create account</button>
+      </form>
+    </div>
+  </main>
+</div>
+<script src="js/app.js"></script>
+<script src="js/login.js"></script>
+</body>
+</html>

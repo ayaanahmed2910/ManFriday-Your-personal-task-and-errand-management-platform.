@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>My Errands · Man Friday</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%2324584a'/%3E%3Ctext x='16' y='21' font-family='Arial' font-weight='700' font-size='13' fill='white' text-anchor='middle'%3EMF%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="top"></header>
+<main class="container">
+  <div class="page-head">
+    <div>
+      <h1 id="greeting">My errands</h1>
+      <p>Post something that needs doing and follow it until it's done.</p>
+    </div>
+    <span class="updated" data-updated></span>
+  </div>
+
+  <div class="stats">
+    <div class="stat"><div class="stat-value" data-stat="open">–</div><div class="stat-label tone-info"><span class="dot"></span>Waiting for assistant</div></div>
+    <div class="stat"><div class="stat-value" data-stat="active">–</div><div class="stat-label tone-warn"><span class="dot"></span>Being handled</div></div>
+    <div class="stat"><div class="stat-value" data-stat="done">–</div><div class="stat-label tone-ok"><span class="dot"></span>Completed</div></div>
+  </div>
+
+  <section class="section">
+    <div class="section-head"><h2>Post a new errand</h2></div>
+    <form id="new-job" class="card" novalidate>
+      <span class="label" id="cat-label">Category</span>
+      <div class="cat-grid" id="categories" role="radiogroup" aria-labelledby="cat-label"></div>
+      <div class="label-row">
+        <label for="instructions">What needs doing?</label>
+        <span class="hint" id="char-count">0 / 2000</span>
+      </div>
+      <textarea id="instructions" maxlength="2000" required placeholder="Describe the errand: what, where, and by when. For example: Pick up my parcel from the post office on MG Road before 5 pm."></textarea>
+      <div class="form-error" role="alert" hidden></div>
+      <div style="display:flex;justify-content:flex-end;margin-top:16px">
+        <button class="btn primary" type="submit" id="post-btn"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>Post errand</button>
+      </div>
+    </form>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <h2>Your errands</h2>
+      <div class="tabs" role="tablist" aria-label="Filter errands" id="filters">
+        <button class="tab" role="tab" type="button" aria-selected="true" data-tab="active">Active <span class="count" data-count="active">0</span></button>
+        <button class="tab" role="tab" type="button" aria-selected="false" data-tab="done">Completed <span class="count" data-count="done">0</span></button>
+        <button class="tab" role="tab" type="button" aria-selected="false" data-tab="closed">Closed <span class="count" data-count="closed">0</span></button>
+        <button class="tab" role="tab" type="button" aria-selected="false" data-tab="all">All <span class="count" data-count="all">0</span></button>
+      </div>
+    </div>
+    <div id="jobs" class="list" aria-live="polite"></div>
+  </section>
+</main>
+<script src="js/app.js"></script>
+<script src="js/client.js"></script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+# Build output
+backend/target/
+
+# Test and tool output
+e2e/screenshots/
+*.log
+
+# IDE
+.idea/
+*.iml
+.vscode/*
+!.vscode/settings.json
+!.vscode/launch.json
+
+# OS
+Thumbs.db
+desktop.ini
+.DS_Store
